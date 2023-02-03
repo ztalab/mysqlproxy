@@ -17,7 +17,7 @@ import (
 	"net"
 	"sync/atomic"
 
-	"github.com/ztalab/mysqlproxy/packet"
+	"mysqlproxy/packet"
 
 	"github.com/siddontang/go/sync2"
 )

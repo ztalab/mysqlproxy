@@ -17,9 +17,9 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/ztalab/mysqlproxy/packet"
+	"mysqlproxy/packet"
 
-	. "github.com/ztalab/mysqlproxy/mysql"
+	. "mysqlproxy/mysql"
 
 	"github.com/pingcap/errors"
 )

@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ztalab/mysqlproxy/packet"
+	"mysqlproxy/packet"
 
 	"github.com/pingcap/errors"
 )

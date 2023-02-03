@@ -14,7 +14,7 @@ package mysql
 import (
 	"strconv"
 
-	"github.com/ztalab/ZASentinel-MYSQL/utils"
+	"github.com/ztalab/mysqlproxy/utils"
 
 	"github.com/pingcap/errors"
 )

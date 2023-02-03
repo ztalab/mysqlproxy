@@ -12,7 +12,7 @@
 package client
 
 import (
-	"github.com/ztalab/ZASentinel-MYSQL/utils"
+	"github.com/ztalab/mysqlproxy/utils"
 )
 
 func (c *Conn) writeCommand(command byte) error {

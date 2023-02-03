@@ -18,7 +18,7 @@ import (
 	"encoding/binary"
 	"encoding/pem"
 
-	"github.com/ztalab/ZASentinel-MYSQL/utils"
+	"github.com/ztalab/mysqlproxy/utils"
 
 	"github.com/pingcap/errors"
 	"github.com/siddontang/go/hack"

@@ -14,7 +14,7 @@ package mysql
 import (
 	"encoding/binary"
 
-	"github.com/ztalab/ZASentinel-MYSQL/utils"
+	"github.com/ztalab/mysqlproxy/utils"
 )
 
 type FieldData []byte

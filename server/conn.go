@@ -17,13 +17,13 @@ import (
 	"net"
 	"sync/atomic"
 
-	"mysqlproxy/packet"
+	"github.com/ztalab/mysqlproxy/packet"
 
 	"github.com/siddontang/go/sync2"
 )
 
 /*
-   Conn acts like a MySQL server connection, you can use MySQL client to communicate with it.
+Conn acts like a MySQL server connection, you can use MySQL client to communicate with it.
 */
 type Conn struct {
 	*packet.Conn

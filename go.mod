@@ -1,4 +1,4 @@
-module mysqlproxy
+module github.com/ztalab/mysqlproxy
 
 go 1.19
 

@@ -15,7 +15,7 @@ import (
 	"bytes"
 	"testing"
 
-	"mysqlproxy/mysql"
+	"github.com/ztalab/mysqlproxy/mysql"
 )
 
 func TestReadAuthData(t *testing.T) {

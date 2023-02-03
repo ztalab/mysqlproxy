@@ -14,7 +14,7 @@ package server
 import (
 	"fmt"
 
-	. "mysqlproxy/mysql"
+	. "github.com/ztalab/mysqlproxy/mysql"
 )
 
 func (c *Conn) writeOK(r *Result) error {

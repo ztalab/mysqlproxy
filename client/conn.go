@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"mysqlproxy/packet"
+	"github.com/ztalab/mysqlproxy/packet"
 
 	"github.com/pingcap/errors"
 )
@@ -194,19 +194,19 @@ func (c *Conn) Execute(command string, args ...interface{}) (*Result, error) {
 }
 
 // ExecuteSelectStreaming will call perRowCallback for every row in resultset
-//   WITHOUT saving any row data to Result.{Values/RawPkg/RowDatas} fields.
+//
+//	WITHOUT saving any row data to Result.{Values/RawPkg/RowDatas} fields.
 //
 // ExecuteSelectStreaming should be used only for SELECT queries with a large response resultset for memory preserving.
 //
 // Example:
 //
-// 		var result mysql.Result
-// 		conn.ExecuteSelectStreaming(`SELECT ... LIMIT 100500`, &result, func(row []mysql.FieldValue) error {
-//   		// Use the row as you want.
-//   		// You must not save FieldValue.AsString() value after this callback is done. Copy it if you need.
-//   		return nil
-// 		})
-//
+//			var result mysql.Result
+//			conn.ExecuteSelectStreaming(`SELECT ... LIMIT 100500`, &result, func(row []mysql.FieldValue) error {
+//	  		// Use the row as you want.
+//	  		// You must not save FieldValue.AsString() value after this callback is done. Copy it if you need.
+//	  		return nil
+//			})
 func (c *Conn) ExecuteSelectStreaming(command string, result *Result, perRowCallback SelectPerRowCallback) error {
 	if err := c.writeCommandStr(COM_QUERY, command); err != nil {
 		return errors.Trace(err)

@@ -17,9 +17,9 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"mysqlproxy/packet"
+	"github.com/ztalab/mysqlproxy/packet"
 
-	. "mysqlproxy/mysql"
+	. "github.com/ztalab/mysqlproxy/mysql"
 
 	"github.com/pingcap/errors"
 )
@@ -120,9 +120,10 @@ func (c *Conn) readInitialHandshake() error {
 // generate auth response data according to auth plugin
 //
 // NOTE: the returned boolean value indicates whether to add a \NUL to the end of data.
-//       it is quite tricky because MySQL server expects different formats of responses in different auth situations.
-//       here the \NUL needs to be added when sending back the empty password or cleartext password in 'sha256_password'
-//       authentication.
+//
+//	it is quite tricky because MySQL server expects different formats of responses in different auth situations.
+//	here the \NUL needs to be added when sending back the empty password or cleartext password in 'sha256_password'
+//	authentication.
 func (c *Conn) genAuthResponse(authData []byte) ([]byte, bool, error) {
 	// password hashing
 	switch c.authPluginName {
